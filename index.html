@@ -39,7 +39,26 @@
 </head>
 
 <body>
-    
+    <script>
+    function czyTelefon() {
+      const ua = navigator.userAgent;
+      const mobileRegex = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+      const smallScreen = window.innerWidth <= 768;
+
+      return mobileRegex || smallScreen;
+    }
+    if (czyTelefon()) {
+      img.src = "gartic_mobile.jpg"; 
+      img.class="gartic";
+      img.alt="DOŁĄCZ";
+      onclick="init()";
+    } else {
+      img.src = "gartic.jpg"; 
+      img.alt="DOŁĄCZ";
+      img.class="gartic";
+      onclick="init()";
+    }
+  </script>
     <img src="gartic.jpg" class="gartic" alt="DOŁĄCZ"
      onclick="init()">
 
